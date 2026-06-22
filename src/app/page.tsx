@@ -116,7 +116,7 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 sm:pt-28">
         <div className="reveal max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
-            <RaspberryMark className="h-4 w-4" /> 15 лет в IT
+            <RaspberryMark className="h-4 w-4" /> Студия веб-разработки
           </span>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
             Превращаем сложное
@@ -146,7 +146,7 @@ function Hero() {
 
         <div className="reveal mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-berry-deep/10 bg-berry-deep/10 sm:grid-cols-4">
           {[
-            ["15 лет", "опыта в IT"],
+            ["Под ключ", "от ТЗ до документации"],
             ["4", "ключевых услуги"],
             ["Своя CMS", "под каждую задачу"],
             ["RU / EN", "мультиязычные сайты"],
@@ -373,7 +373,7 @@ function About() {
           <SectionHead eyebrow="О студии" />
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              Мы в IT уже <b className="text-ink">больше 15 лет</b>. За это время
+              Мы <b className="text-ink">много лет</b> в IT. За это время
               делали сайты и порталы, писали технические задания, проектировали
               интерфейсы и переписывали документацию так, чтобы пользователи
               находили ответы сами, а поддержка получала меньше обращений.
