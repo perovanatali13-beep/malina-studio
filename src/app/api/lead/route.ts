@@ -75,10 +75,15 @@ async function forwardLead(lead: Record<string, string>) {
     `Услуга: ${lead.service}\n` +
     `Сообщение: ${lead.message}`;
 
-  // 1) Email через Resend (основной канал).
+  // 1) Email (основной канал).
+  // Если задан RESEND_API_KEY — шлём через Resend (можно с красивого домена).
+  // Иначе — через FormSubmit: без ключей и регистрации, нужна одноразовая
+  // активация по ссылке из первого письма на LEAD_TO_EMAIL.
   const resendKey = process.env.RESEND_API_KEY;
   if (resendKey) {
     await sendEmail(resendKey, lead, text);
+  } else {
+    await sendViaFormSubmit(lead);
   }
 
   // 2) Telegram — если настроен бот.
@@ -100,6 +105,33 @@ async function forwardLead(lead: Record<string, string>) {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(lead),
     });
+  }
+}
+
+async function sendViaFormSubmit(lead: Record<string, string>) {
+  const res = await fetch(
+    `https://formsubmit.co/ajax/${encodeURIComponent(LEAD_TO_EMAIL)}`,
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        _subject: `Заявка с сайта: ${lead.name}`,
+        _template: "table",
+        _captcha: "false",
+        Имя: lead.name,
+        Контакт: lead.contact,
+        Услуга: lead.service,
+        Сообщение: lead.message,
+      }),
+    }
+  );
+
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new Error(`FormSubmit ${res.status}: ${detail}`);
   }
 }
 
