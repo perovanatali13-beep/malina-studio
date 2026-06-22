@@ -116,6 +116,11 @@ async function sendViaFormSubmit(lead: Record<string, string>) {
       headers: {
         "Content-Type": "application/json",
         Accept: "application/json",
+        // FormSubmit отклоняет запросы без Origin/Referer/User-Agent (403).
+        "User-Agent":
+          "Mozilla/5.0 (compatible; MalinaStudio/1.0; +https://malina-studio.vercel.app)",
+        Origin: "https://malina-studio.vercel.app",
+        Referer: "https://malina-studio.vercel.app/",
       },
       body: JSON.stringify({
         _subject: `Заявка с сайта: ${lead.name}`,
