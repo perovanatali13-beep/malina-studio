@@ -6,13 +6,13 @@ const services = [
   {
     title: "Сайты с админкой",
     desc: "Многостраничные сайты и порталы с собственной панелью управления: контент, новости, каталоги и заявки редактируются без программиста.",
-    points: ["Своя CMS под задачу", "Каталоги и справочники", "Мультиязычность", "Формы и заявки"],
+    points: ["Своя CMS под задачу", "Каталоги и справочники", "Мультиязычность", "Формы и заявки", "SEO и аналитика"],
     icon: "site",
   },
   {
     title: "Лендинги",
     desc: "Продающие одностраничники под продукт, услугу или мероприятие. Быстрая загрузка, аналитика и понятная структура, которая ведёт к заявке.",
-    points: ["Продуманная структура", "SEO и аналитика", "Адаптив под мобильные", "A/B-готовность"],
+    points: ["Продуманная структура", "SEO и аналитика", "Адаптив под мобильные"],
     icon: "landing",
   },
   {
@@ -124,10 +124,9 @@ function Hero() {
             в <span className="text-berry">понятное</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Студия <b className="text-ink">Малина</b> создаёт сайты с собственной
-            админкой, лендинги, технические задания на разработку и
-            пользовательскую документацию. Делаем продукты, которыми удобно
-            пользоваться и легко управлять.
+            Мы создаём сайты с собственной админкой, лендинги, технические
+            задания на разработку и пользовательскую документацию. Делаем
+            продукты, которыми удобно пользоваться и легко управлять.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
@@ -371,7 +370,7 @@ function About() {
     <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <SectionHead eyebrow="О студии" title="Студия Малина" />
+          <SectionHead eyebrow="О студии" />
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
               Мы в IT уже <b className="text-ink">больше 15 лет</b>. За это время
@@ -394,7 +393,7 @@ function About() {
           </div>
         </div>
         <div className="rounded-3xl border border-berry-deep/10 bg-white p-8 shadow-sm">
-          <Logo className="mb-6" />
+          <Logo height={84} className="mb-6" />
           <div className="space-y-5">
             {[
               ["Сайты с админкой", "Управляете контентом сами — без разработчика"],
@@ -475,7 +474,7 @@ function SectionHead({
   dark = false,
 }: {
   eyebrow: string;
-  title: string;
+  title?: string;
   text?: string;
   dark?: boolean;
 }) {
@@ -488,13 +487,15 @@ function SectionHead({
       >
         {eyebrow}
       </span>
-      <h2
-        className={`mt-3 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl ${
-          dark ? "text-cream" : "text-ink"
-        }`}
-      >
-        {title}
-      </h2>
+      {title ? (
+        <h2
+          className={`mt-3 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl ${
+            dark ? "text-cream" : "text-ink"
+          }`}
+        >
+          {title}
+        </h2>
+      ) : null}
       {text ? (
         <p
           className={`mt-4 text-lg leading-relaxed ${

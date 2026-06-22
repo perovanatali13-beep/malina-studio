@@ -1,11 +1,25 @@
-export function Logo({ className = "" }: { className?: string }) {
+import Image from "next/image";
+
+const LOGO_RATIO = 538 / 524;
+
+export function Logo({
+  height = 48,
+  priority = false,
+  className = "",
+}: {
+  height?: number;
+  priority?: boolean;
+  className?: string;
+}) {
   return (
-    <span className={`inline-flex items-center gap-2.5 ${className}`}>
-      <RaspberryMark className="h-8 w-8" />
-      <span className="font-display text-xl font-bold tracking-tight text-ink">
-        Малина
-      </span>
-    </span>
+    <Image
+      src="/logo.png"
+      alt="Студия Малина"
+      width={Math.round(height * LOGO_RATIO)}
+      height={height}
+      priority={priority}
+      className={className}
+    />
   );
 }
 

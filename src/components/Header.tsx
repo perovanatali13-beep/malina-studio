@@ -12,7 +12,7 @@ export function Header() {
     <header className="sticky top-0 z-50 border-b border-berry-deep/10 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
         <a href="#top" aria-label="Студия Малина">
-          <Logo />
+          <Logo height={52} priority />
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (
