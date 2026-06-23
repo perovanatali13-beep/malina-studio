@@ -373,7 +373,7 @@ function About() {
           <SectionHead eyebrow="О студии" />
           <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
             <p>
-              Мы <b className="text-ink">много лет</b> в IT. За это время
+              Мы <b className="text-ink">более 15 лет</b> в IT. За это время
               делали сайты и порталы, писали технические задания, проектировали
               интерфейсы и переписывали документацию так, чтобы пользователи
               находили ответы сами, а поддержка получала меньше обращений.
