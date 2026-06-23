@@ -65,7 +65,7 @@ export async function POST(request: Request) {
 }
 
 // Куда отправлять заявки на почту (по умолчанию — ящик студии).
-const LEAD_TO_EMAIL = process.env.LEAD_TO_EMAIL ?? "perova.natali13@gmail.com";
+const LEAD_TO_EMAIL = process.env.LEAD_TO_EMAIL ?? "malina.studio26@yandex.com";
 
 async function forwardLead(lead: Record<string, string>) {
   const text =
