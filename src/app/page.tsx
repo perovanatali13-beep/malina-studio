@@ -79,50 +79,33 @@ function Hero() {
       <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-berry-bright/15 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 top-40 h-72 w-72 rounded-full bg-leaf/10 blur-3xl" />
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 sm:pt-28">
-        <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-12">
-          <div className="reveal">
-            <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
-              <RaspberryMark className="h-4 w-4" /> Студия веб-разработки
-            </span>
-            <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl">
-              Превращаем сложное
-              <br />
-              в <span className="text-berry">понятное</span>
-            </h1>
-            <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-              Мы создаём сайты с собственной админкой, лендинги, технические
-              задания на разработку и пользовательскую документацию. Делаем
-              продукты, которыми удобно пользоваться и легко управлять.
-            </p>
-            <div className="mt-9 flex flex-wrap items-center gap-4">
-              <a
-                href="#contact"
-                className="rounded-full bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
-              >
-                Обсудить проект
-              </a>
-              <a
-                href="#cases"
-                className="rounded-full border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
-              >
-                Смотреть кейсы
-              </a>
-            </div>
-          </div>
-
-          <div className="reveal relative mx-auto aspect-square w-full max-w-md">
-            <div className="absolute inset-0 overflow-hidden rounded-[2.5rem] bg-gradient-to-br from-cream-deep via-white to-berry-bright/10 ring-1 ring-berry-deep/10">
-              <div className="pointer-events-none absolute -left-6 top-6 h-44 w-44 rounded-full bg-leaf/25 blur-3xl" />
-              <div className="pointer-events-none absolute -bottom-6 right-0 h-48 w-48 rounded-full bg-berry-bright/25 blur-3xl" />
-            </div>
-            <Image
-              src="/raspberry.png"
-              alt="Малина"
-              fill
-              priority
-              sizes="(max-width: 1024px) 90vw, 28rem"
-              className="relative object-contain p-8 drop-shadow-[0_18px_30px_rgba(122,21,56,0.18)]"
-            />
+        <div className="reveal max-w-3xl">
+          <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
+            <RaspberryMark className="h-4 w-4" /> Студия веб-разработки
+          </span>
+          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
+            Превращаем сложное
+            <br />
+            в <span className="text-berry">понятное</span>
+          </h1>
+          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+            Мы создаём сайты с собственной админкой, лендинги, технические
+            задания на разработку и пользовательскую документацию. Делаем
+            продукты, которыми удобно пользоваться и легко управлять.
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-4">
+            <a
+              href="#contact"
+              className="rounded-full bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+            >
+              Обсудить проект
+            </a>
+            <a
+              href="#cases"
+              className="rounded-full border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
+            >
+              Смотреть кейсы
+            </a>
           </div>
         </div>
 
