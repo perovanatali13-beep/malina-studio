@@ -37,8 +37,12 @@ body {
   font-family: var(--font-display), Georgia, serif;
 }
 
+/* Прямоугольные кнопки: острые углы, капитель, разрядка (как на референсе) */
 .btn-leaf {
-  border-radius: 9999px;
+  border-radius: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 500;
 }
 
 ::selection {

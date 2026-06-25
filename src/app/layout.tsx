@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Spectral, Manrope } from "next/font/google";
+import { Cormorant, Jost } from "next/font/google";
 import "./globals.css";
 
-const display = Spectral({
+const display = Cormorant({
   variable: "--font-display",
   subsets: ["latin", "cyrillic"],
-  weight: ["500", "600", "700"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const sans = Manrope({
+const sans = Jost({
   variable: "--font-sans",
-  subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600"],
 });
 
 export const metadata: Metadata = {
