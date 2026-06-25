@@ -1,6 +1,9 @@
+import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { LeadForm } from "@/components/LeadForm";
 import { Logo, RaspberryMark } from "@/components/Logo";
+import { cases } from "@/data/cases";
 
 const services = [
   {
@@ -49,44 +52,6 @@ const steps = [
     n: "04",
     title: "Сопровождаем",
     desc: "Документация, обучение и поддержка. Вы можете сами управлять контентом, а мы остаёмся на связи.",
-  },
-];
-
-const cases = [
-  {
-    tag: "Сайт сообщества · некоммерческий проект",
-    title: "Caretta Friends",
-    subtitle: "Сайт проекта по защите морских черепах Caretta caretta в Газипаше",
-    url: "https://carettafriends.com/ru",
-    did: [
-      "Спроектировали и разработали сайт некоммерческой организации с разделами о миссии, волонтёрстве и инструкциями «что делать при обнаружении гнезда».",
-      "Сделали новостной раздел с категориями: экологические акции, спасение черепах, уборки пляжей, исследования и публикации.",
-      "Подключили мультиязычность и интеграцию с соцсетями организации.",
-    ],
-    wins: [
-      "Понятная навигация для волонтёров и местных жителей",
-      "Контент-блоки и новости редактируются без разработчика",
-      "Адаптивный дизайн и быстрая загрузка",
-    ],
-    accent: "leaf",
-  },
-  {
-    tag: "Информационный портал · сообщество",
-    title: "Gazipasha Info",
-    subtitle: "Портал для русскоязычных жителей и гостей турецкого города Газипаша",
-    url: "https://gazipasha-portal.vercel.app/ru",
-    did: [
-      "Разработали портал-справочник: «Что посмотреть», «Где поесть», новости, поиск жилья, товары и услуги, мастера и сервисы.",
-      "Собрали разделы сообщества: форум, деятельность и волонтёрские проекты, правила взаимодействия.",
-      "Сделали динамические блоки на главной — дежурная аптека с графиком работы и актуальные новости города.",
-      "Реализовали две языковые версии: русскую и английскую.",
-    ],
-    wins: [
-      "Справочник и социальная платформа в одном решении",
-      "Собственная админка для новостей и справочников",
-      "Структура, рассчитанная на рост числа разделов",
-    ],
-    accent: "berry",
   },
 ];
 
@@ -277,14 +242,11 @@ function Cases() {
         title="Проекты, которые работают"
         text="Два публичных проекта, которые можно открыть и потрогать. Каждый — с собственной админкой и мультиязычностью."
       />
-      <div className="mt-12 space-y-8">
+      <div className="mt-12 space-y-12">
         {cases.map((c) => (
-          <article
-            key={c.title}
-            className="overflow-hidden rounded-3xl border border-berry-deep/10 bg-white shadow-sm"
-          >
-            <div className="grid lg:grid-cols-5">
-              <div className="border-b border-berry-deep/10 p-7 sm:p-9 lg:col-span-3 lg:border-b-0 lg:border-r">
+          <article key={c.slug}>
+            <div className="flex flex-wrap items-end justify-between gap-4">
+              <div>
                 <span
                   className={`inline-block rounded-full px-3 py-1 text-sm font-medium ${
                     c.accent === "leaf"
@@ -297,43 +259,33 @@ function Cases() {
                 <h3 className="mt-4 font-display text-3xl font-bold text-ink">
                   {c.title}
                 </h3>
-                <p className="mt-2 text-ink-soft">{c.subtitle}</p>
-
-                <h4 className="mt-7 text-sm font-bold uppercase tracking-wide text-berry-deep">
-                  Что сделали
-                </h4>
-                <ul className="mt-3 space-y-2.5">
-                  {c.did.map((d) => (
-                    <li key={d} className="flex gap-3 text-ink-soft">
-                      <Bullet />
-                      <span className="leading-relaxed">{d}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="mt-2 max-w-xl text-ink-soft">{c.subtitle}</p>
               </div>
+              <Link
+                href={`/cases/${c.slug}`}
+                className="inline-flex items-center gap-2 rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+              >
+                Подробнее о проекте
+                <span aria-hidden>→</span>
+              </Link>
+            </div>
 
-              <div className="bg-cream p-7 sm:p-9 lg:col-span-2">
-                <h4 className="text-sm font-bold uppercase tracking-wide text-berry-deep">
-                  Преимущества
-                </h4>
-                <ul className="mt-3 space-y-3">
-                  {c.wins.map((w) => (
-                    <li key={w} className="flex gap-3">
-                      <span className="mt-0.5 text-berry">✓</span>
-                      <span className="leading-relaxed text-ink">{w}</span>
-                    </li>
-                  ))}
-                </ul>
-                <a
-                  href={c.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-7 inline-flex items-center gap-2 rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+            <div className="mt-6 grid gap-4 sm:grid-cols-3">
+              {c.shots.map((shot) => (
+                <Link
+                  key={shot.src}
+                  href={`/cases/${c.slug}`}
+                  className="group block overflow-hidden rounded-2xl border border-berry-deep/10 bg-white shadow-sm transition-shadow hover:shadow-md"
                 >
-                  Открыть сайт
-                  <span aria-hidden>↗</span>
-                </a>
-              </div>
+                  <Image
+                    src={shot.src}
+                    alt={shot.alt}
+                    width={shot.width}
+                    height={shot.height}
+                    className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                  />
+                </Link>
+              ))}
             </div>
           </article>
         ))}
@@ -507,8 +459,4 @@ function SectionHead({
       ) : null}
     </div>
   );
-}
-
-function Bullet() {
-  return <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-berry" />;
 }
