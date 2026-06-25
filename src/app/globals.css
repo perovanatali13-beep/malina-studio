@@ -37,10 +37,8 @@ body {
   font-family: var(--font-display), Georgia, serif;
 }
 
-/* Кнопки в форме листка: скруглены верхний-левый и нижний-правый углы,
-   верхний-правый и нижний-левый — прямые */
 .btn-leaf {
-  border-radius: 2.5rem 0 2.5rem 0;
+  border-radius: 9999px;
 }
 
 ::selection {
