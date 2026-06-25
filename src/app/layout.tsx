@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Spectral, Manrope } from "next/font/google";
 import "./globals.css";
+import { Decor } from "@/components/Decor";
 
 const display = Spectral({
   variable: "--font-display",
@@ -46,7 +47,10 @@ export default function RootLayout({
       lang="ru"
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Decor />
+        {children}
+      </body>
     </html>
   );
 }
