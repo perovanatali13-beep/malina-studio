@@ -30,11 +30,30 @@ body {
   background: var(--color-cream);
   color: var(--color-ink);
   font-family: var(--font-sans), system-ui, sans-serif;
+  font-weight: 300;
+  line-height: 1.7;
   -webkit-font-smoothing: antialiased;
 }
 
 .font-display {
   font-family: var(--font-display), Georgia, serif;
+  font-weight: 400;
+}
+
+/* Тонкое начертание во всём интерфейсе (как на референсе) */
+.font-medium {
+  font-weight: 300;
+}
+.font-semibold,
+.font-bold {
+  font-weight: 400;
+}
+
+/* Все элементы прямоугольные — убираем скругления */
+.rounded-2xl,
+.rounded-3xl,
+.rounded-full {
+  border-radius: 0;
 }
 
 /* Прямоугольные кнопки: острые углы, капитель, разрядка (как на референсе) */
@@ -42,7 +61,7 @@ body {
   border-radius: 0;
   text-transform: uppercase;
   letter-spacing: 0.12em;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 ::selection {
