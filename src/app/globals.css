@@ -37,6 +37,12 @@ body {
   font-family: var(--font-display), Georgia, serif;
 }
 
+/* Кнопки в форме листка: скруглены верхний-левый и нижний-правый углы,
+   верхний-правый и нижний-левый — прямые */
+.btn-leaf {
+  border-radius: 1.5rem 0 1.5rem 0;
+}
+
 ::selection {
   background: var(--color-berry);
   color: #fff;

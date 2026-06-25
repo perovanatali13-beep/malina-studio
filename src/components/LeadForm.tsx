@@ -129,7 +129,7 @@ export function LeadForm() {
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-6 w-full rounded-full bg-berry px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep disabled:cursor-not-allowed disabled:opacity-60"
+        className="btn-leaf mt-6 w-full bg-berry px-6 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep disabled:cursor-not-allowed disabled:opacity-60"
       >
         {status === "loading" ? "Отправляем…" : "Отправить заявку"}
       </button>

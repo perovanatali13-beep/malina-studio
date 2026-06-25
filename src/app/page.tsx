@@ -96,13 +96,13 @@ function Hero() {
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
               href="#contact"
-              className="rounded-full bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+              className="btn-leaf bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
             >
               Обсудить проект
             </a>
             <a
               href="#cases"
-              className="rounded-full border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
+              className="btn-leaf border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
             >
               Смотреть кейсы
             </a>
@@ -263,7 +263,7 @@ function Cases() {
               </div>
               <Link
                 href={`/cases/${c.slug}`}
-                className="inline-flex items-center gap-2 rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+                className="btn-leaf inline-flex items-center gap-2 bg-berry px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
               >
                 Подробнее о проекте
                 <span aria-hidden>→</span>
@@ -308,7 +308,7 @@ function Portfolio() {
         </p>
         <a
           href="#contact"
-          className="mt-6 inline-block rounded-full border border-berry px-6 py-3 text-sm font-semibold text-berry transition-colors hover:bg-berry hover:text-white"
+          className="btn-leaf mt-6 inline-block border border-berry px-6 py-3 text-sm font-semibold text-berry transition-colors hover:bg-berry hover:text-white"
         >
           Запросить примеры
         </a>

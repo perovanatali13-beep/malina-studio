@@ -99,7 +99,7 @@ export default async function CasePage({
                     href={c.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-berry px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+                    className="btn-leaf mt-7 inline-flex w-full items-center justify-center gap-2 bg-berry px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
                   >
                     Открыть сайт
                     <span aria-hidden>↗</span>
@@ -168,7 +168,7 @@ export default async function CasePage({
             </p>
             <Link
               href="/#contact"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+              className="btn-leaf mt-7 inline-flex items-center gap-2 bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
             >
               Обсудить проект
             </Link>
@@ -231,7 +231,7 @@ function CaseHeader() {
         </Link>
         <Link
           href="/#contact"
-          className="rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+          className="btn-leaf bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
         >
           Оставить заявку
         </Link>

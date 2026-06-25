@@ -27,7 +27,7 @@ export function Header() {
         </nav>
         <a
           href="#contact"
-          className="rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+          className="btn-leaf bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
         >
           Оставить заявку
         </a>
