@@ -1,113 +1,64 @@
-const LEAF =
-  "M0 0 C 6 -3 9 -11 5 -20 C 4 -13 -4 -13 -5 -20 C -9 -11 -6 -3 0 0 Z";
+// Расположение «зёрнышек» (друплетов), из которых складывается ягода малины
+const DRUPELETS: [number, number, number][] = [
+  [50, 20, 11],
+  [37, 29, 11.5], [63, 29, 11.5],
+  [28, 40, 12], [50, 39, 12], [72, 40, 12],
+  [31, 53, 12], [50, 52, 12], [69, 53, 12],
+  [38, 65, 11.5], [62, 65, 11.5],
+  [45, 76, 10.5], [57, 76, 10.5],
+  [51, 85, 9.5],
+];
 
-function Leaf({ scale = 1 }: { scale?: number }) {
+/** Реалистичная ягода малины (объёмные зёрнышки с бликами) */
+export function Raspberry({
+  className = "",
+  gid = "rasp",
+}: {
+  className?: string;
+  gid?: string;
+}) {
   return (
-    <g transform={`scale(${scale})`}>
-      <path d={LEAF} fill="#3f7d54" fillOpacity={0.16} />
-      <path
-        d="M0 -1 L 3 -17"
-        stroke="#3f7d54"
-        strokeOpacity={0.26}
-        strokeWidth={0.9}
-        fill="none"
-      />
-    </g>
-  );
-}
-
-function BerryCluster({ scale = 1 }: { scale?: number }) {
-  return (
-    <g transform={`scale(${scale})`}>
-      <path
-        d="M0 -10 L0 -20"
-        stroke="#3f7d54"
-        strokeOpacity={0.24}
-        strokeWidth={1.4}
-        fill="none"
-      />
-      <g fill="#c7245a" fillOpacity={0.16}>
-        {[
-          [-6, -6], [0, -6], [6, -6],
-          [-9, 0], [-3, 0], [3, 0], [9, 0],
-          [-6, 6], [0, 6], [6, 6],
-          [-3, 11], [3, 11],
-          [0, 15],
-        ].map(([cx, cy], i) => (
-          <circle key={i} cx={cx} cy={cy} r={4} />
-        ))}
-      </g>
-      <g fill="#7a1538" fillOpacity={0.1}>
-        {[
-          [0, -6], [-3, 0], [3, 0], [0, 6], [0, 15],
-        ].map(([cx, cy], i) => (
-          <circle key={i} cx={cx} cy={cy} r={1.3} />
-        ))}
-      </g>
-    </g>
-  );
-}
-
-/** Веточка малины: изогнутый стебель, пара листьев и ягода */
-function Sprig({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 130 180" className={className} aria-hidden>
-      <path
-        d="M20 175 C 40 130 30 90 70 50"
-        fill="none"
-        stroke="#3f7d54"
-        strokeOpacity={0.22}
-        strokeWidth={2}
-        strokeLinecap="round"
-      />
-      <g transform="translate(33 120) rotate(-40)">
-        <Leaf scale={1.5} />
-      </g>
-      <g transform="translate(46 88) rotate(34)">
-        <Leaf scale={1.35} />
-      </g>
-      <g transform="translate(74 38) scale(1.4)">
-        <BerryCluster />
-      </g>
-    </svg>
-  );
-}
-
-/** Абстрактная линия с маленьким листком на конце */
-function LineLeaf({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 220 220" className={className} aria-hidden>
-      <path
-        d="M10 205 C 70 150 60 110 110 95 C 165 78 150 35 205 15"
-        fill="none"
-        stroke="#7a1538"
-        strokeOpacity={0.2}
-        strokeWidth={1.8}
-        strokeLinecap="round"
-      />
-      <g transform="translate(205 15) rotate(120)">
-        <Leaf scale={1.6} />
-      </g>
-    </svg>
-  );
-}
-
-/** Пара ягод */
-function Berries({ className = "" }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 120 120" className={className} aria-hidden>
-      <g transform="translate(40 55)">
-        <BerryCluster scale={1.3} />
-      </g>
-      <g transform="translate(82 80)">
-        <BerryCluster scale={0.85} />
-      </g>
+    <svg viewBox="0 0 100 112" className={className} aria-hidden>
+      <defs>
+        <radialGradient id={`${gid}-d`} cx="0.36" cy="0.30" r="0.78">
+          <stop offset="0" stopColor="#ff95ba" />
+          <stop offset="0.5" stopColor="#d6346e" />
+          <stop offset="1" stopColor="#7a1538" />
+        </radialGradient>
+      </defs>
+      {/* мягкая тень под ягодой */}
+      <ellipse cx="50" cy="100" rx="25" ry="6" fill="#7a1538" opacity="0.12" />
+      {/* зёрнышки */}
+      {DRUPELETS.map(([cx, cy, r], i) => (
+        <circle
+          key={i}
+          cx={cx}
+          cy={cy}
+          r={r}
+          fill={`url(#${gid}-d)`}
+          stroke="#5e0c28"
+          strokeOpacity="0.3"
+          strokeWidth="0.6"
+        />
+      ))}
+      {/* блики */}
+      {DRUPELETS.map(([cx, cy, r], i) => (
+        <ellipse
+          key={`h${i}`}
+          cx={cx - r * 0.32}
+          cy={cy - r * 0.34}
+          rx={r * 0.24}
+          ry={r * 0.16}
+          fill="#ffffff"
+          opacity="0.38"
+        />
+      ))}
     </svg>
   );
 }
 
 /**
- * Деликатные декоративные объекты в пустых полях по краям страницы.
+ * Несколько ягод малины в пустых полях по краям страницы.
  * Видны только на широких экранах, чтобы не пересекаться с контентом.
  */
 export function Decor() {
@@ -116,9 +67,18 @@ export function Decor() {
       aria-hidden
       className="pointer-events-none absolute inset-0 -z-10 hidden overflow-hidden xl:block"
     >
-      <LineLeaf className="absolute right-[-28px] top-[110px] h-52 w-52" />
-      <Sprig className="absolute left-[-16px] top-[58%] h-60 w-44" />
-      <Berries className="absolute right-[18px] top-[86%] h-28 w-28" />
+      <Raspberry
+        gid="d1"
+        className="absolute left-1 top-[22%] h-16 w-16 -rotate-12 opacity-90"
+      />
+      <Raspberry
+        gid="d2"
+        className="absolute right-2 top-[56%] h-16 w-16 rotate-6 opacity-90"
+      />
+      <Raspberry
+        gid="d3"
+        className="absolute left-2 top-[84%] h-14 w-14 rotate-[14deg] opacity-90"
+      />
     </div>
   );
 }
