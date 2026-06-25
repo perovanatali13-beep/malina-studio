@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Logo } from "./Logo";
 
 const nav = [
@@ -25,12 +26,22 @@ export function Header() {
             </a>
           ))}
         </nav>
-        <a
-          href="#contact"
-          className="rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
-        >
-          Оставить заявку
-        </a>
+        <div className="flex items-center gap-4">
+          <a
+            href="#contact"
+            className="rounded-full bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+          >
+            Оставить заявку
+          </a>
+          <Image
+            src="/raspberry-header.png"
+            alt="Малина"
+            width={84}
+            height={56}
+            priority
+            className="hidden h-14 w-auto sm:block"
+          />
+        </div>
       </div>
     </header>
   );
