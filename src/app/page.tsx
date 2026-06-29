@@ -86,7 +86,8 @@ function Hero() {
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
             Превращаем сложное
             <br />
-            в <span className="text-berry">понятное</span>
+            в <span className="text-berry">понятное</span>, решаем задачи
+            бизнеса
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
             Мы создаём веб-сайты под ключ: сайты с собственной понятной
