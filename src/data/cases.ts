@@ -108,7 +108,7 @@ export const cases: CaseStudy[] = [
     tag: "Информационный портал · сообщество",
     title: "Gazipasha Info",
     subtitle:
-      "Портал для русскоязычных жителей и гостей турецкого города Газипаша",
+      "Сообщество иностранцев Газипаши. Портал для жителей и гостей турецкого города Газипаша",
     url: "https://gazipasha-portal.vercel.app/ru",
     urlLabel: "gazipasha-portal.vercel.app",
     accent: "berry",
