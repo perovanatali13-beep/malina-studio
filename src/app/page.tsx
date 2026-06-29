@@ -8,7 +8,7 @@ import { cases } from "@/data/cases";
 const services = [
   {
     title: "Сайты с админкой",
-    desc: "Многостраничные сайты и порталы с собственной панелью управления: контент, новости, каталоги и заявки редактируются без программиста.",
+    desc: "Разработка веб-сайтов под ключ: корпоративные сайты, многостраничники и порталы с собственной панелью управления. Контент, новости, каталоги и заявки редактируются без программиста — через понятную админку.",
     points: ["Своя CMS под задачу", "Каталоги и справочники", "Мультиязычность", "Формы и заявки", "SEO и аналитика"],
     icon: "site",
   },
@@ -81,7 +81,7 @@ function Hero() {
       <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 sm:pt-28">
         <div className="reveal max-w-3xl">
           <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
-            <RaspberryMark className="h-4 w-4" /> Студия веб-разработки
+            <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
           </span>
           <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
             Превращаем сложное
@@ -89,9 +89,10 @@ function Hero() {
             в <span className="text-berry">понятное</span>
           </h1>
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
-            Мы создаём сайты с собственной админкой, лендинги, технические
-            задания на разработку и пользовательскую документацию. Делаем
-            продукты, которыми удобно пользоваться и легко управлять.
+            Мы создаём веб-сайты под ключ: сайты с собственной понятной
+            админкой, лендинги, интернет-магазины, технические задания на
+            разработку и пользовательскую документацию. Делаем продукты,
+            которыми удобно пользоваться и легко управлять.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-4">
             <a
@@ -342,6 +343,12 @@ function About() {
               скорости, настраиваем SEO и аналитику, чтобы решения приносили
               измеримый результат.
             </p>
+            <p>
+              Наша веб-студия закрывает весь цикл — создание и разработка
+              веб-сайтов под ключ, от лендинга до корпоративного сайта и
+              интернет-магазина, настройка SEO для продвижения в поисковых
+              системах, а затем поддержка и развитие сайта.
+            </p>
           </div>
         </div>
         <div className="rounded-3xl border border-berry-deep/10 bg-white p-8 shadow-sm">
@@ -405,8 +412,8 @@ function Footer() {
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
         <Logo />
         <p className="text-sm text-ink-soft">
-          © {new Date().getFullYear()} Студия Малина. Сайты, лендинги, ТЗ и
-          документация.
+          © {new Date().getFullYear()} Студия Малина — разработка и создание
+          сайтов под ключ.
         </p>
         <a
           href="#contact"
