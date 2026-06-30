@@ -77,8 +77,8 @@ const tech = [
     desc: "Регистрируем сайт в Яндекс Вебмастере для корректной индексации и контроля над позициями в поиске.",
   },
   {
-    title: "Google Analytics",
-    desc: "Настраиваем Google Analytics для сквозной аналитики, отслеживания целей и оценки эффективности.",
+    title: "Google Analytics и Search Console",
+    desc: "Настраиваем Google Analytics для сквозной аналитики и целей, а также подключаем Google Search Console для индексации и контроля сайта в Google.",
   },
 ];
 
