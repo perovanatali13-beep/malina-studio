@@ -4,6 +4,7 @@ const nav = [
   { href: "#services", label: "Услуги" },
   { href: "#how", label: "Как работаем" },
   { href: "#cases", label: "Кейсы" },
+  { href: "#tech", label: "Технологии" },
   { href: "#about", label: "О студии" },
 ];
 

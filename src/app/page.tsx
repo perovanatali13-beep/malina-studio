@@ -55,6 +55,33 @@ const steps = [
   },
 ];
 
+const tech = [
+  {
+    title: "Код на GitHub",
+    desc: "Исходный код проекта храним на GitHub — прозрачная история изменений и версионирование на каждом этапе.",
+  },
+  {
+    title: "Хостинг на Vercel",
+    desc: "Размещаем сайт на современном хостинге Vercel: быстрая загрузка, HTTPS и стабильная работа без вашего участия.",
+  },
+  {
+    title: "Доступы — у вас",
+    desc: "Передаём заказчику все доступы: к репозиторию, хостингу и домену. Проект полностью ваш, без привязки к нам.",
+  },
+  {
+    title: "Яндекс Метрика",
+    desc: "Подключаем и настраиваем Яндекс Метрику, чтобы видеть посещаемость, источники трафика и поведение пользователей.",
+  },
+  {
+    title: "Яндекс Вебмастер",
+    desc: "Регистрируем сайт в Яндекс Вебмастере для корректной индексации и контроля над позициями в поиске.",
+  },
+  {
+    title: "Google Analytics",
+    desc: "Настраиваем Google Analytics для сквозной аналитики, отслеживания целей и оценки эффективности.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -64,6 +91,7 @@ export default function Home() {
         <Services />
         <How />
         <Cases />
+        <Tech />
         <Portfolio />
         <About />
         <Contact />
@@ -289,6 +317,32 @@ function Cases() {
                 </Link>
               ))}
             </div>
+          </article>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+function Tech() {
+  return (
+    <section id="tech" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+      <SectionHead
+        eyebrow="Технологии"
+        title="Прозрачно и под ваш контроль"
+        text="Выкладываем проект на GitHub и размещаем на хостинге Vercel, передаём все доступы заказчику и настраиваем аналитику — Яндекс Метрику, Вебмастер и Google Analytics."
+      />
+      <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+        {tech.map((t) => (
+          <article
+            key={t.title}
+            className="rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+          >
+            <RaspberryMark className="h-7 w-7" />
+            <h3 className="mt-5 font-display text-xl font-semibold text-ink">
+              {t.title}
+            </h3>
+            <p className="mt-3 leading-relaxed text-ink-soft">{t.desc}</p>
           </article>
         ))}
       </div>
