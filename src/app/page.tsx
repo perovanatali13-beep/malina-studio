@@ -91,8 +91,8 @@ export default function Home() {
         <Services />
         <How />
         <Cases />
-        <Tech />
         <Portfolio />
+        <Tech />
         <About />
         <Contact />
       </main>
