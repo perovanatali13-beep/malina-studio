@@ -77,6 +77,7 @@ export const metadata: Metadata = {
     locale: "ru_RU",
   },
   verification: {
+    google: "ScbRUmIuBn453utlUWxWAA0qAkzGhGp_qq_zjTXe7HE",
     yandex: "73b7af3673e0b579",
   },
 };
