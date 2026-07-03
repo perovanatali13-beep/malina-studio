@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { cases } from "@/data/cases";
 
-const BASE_URL = "https://malina.studio";
+const BASE_URL = "https://malina-studio.online";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date();
