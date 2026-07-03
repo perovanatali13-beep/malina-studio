@@ -20,9 +20,25 @@ export async function generateMetadata({
   return {
     title: `${c.title} — кейс Студии Малина`,
     description: c.subtitle,
+    keywords: [
+      c.title,
+      `${c.title} кейс`,
+      "пример разработки сайта",
+      "кейс разработки сайта",
+      "сайт с админкой пример",
+      "пример сайта с понятной админкой",
+      "мультиязычный сайт пример",
+      "заказать сайт как в кейсе",
+      "студия Малина",
+    ],
+    alternates: {
+      canonical: `/cases/${c.slug}`,
+    },
     openGraph: {
       title: `${c.title} — кейс Студии Малина`,
       description: c.subtitle,
+      url: `https://malina-studio.online/cases/${c.slug}`,
+      type: "article",
       images: c.shots[0] ? [c.shots[0].src] : undefined,
     },
   };
