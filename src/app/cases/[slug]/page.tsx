@@ -56,8 +56,55 @@ export default async function CasePage({
   const accentChip =
     c.accent === "leaf" ? "bg-leaf/10 text-leaf" : "bg-berry/10 text-berry";
 
+  const caseUrl = `https://malina-studio.online/cases/${c.slug}`;
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        name: `${c.title} — кейс Студии Малина`,
+        headline: c.title,
+        description: c.subtitle,
+        url: caseUrl,
+        inLanguage: "ru-RU",
+        image: c.shots[0]
+          ? `https://malina-studio.online${c.shots[0].src}`
+          : undefined,
+        author: { "@type": "Organization", name: "Студия Малина" },
+        publisher: { "@id": "https://malina-studio.online/#organization" },
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          {
+            "@type": "ListItem",
+            position: 1,
+            name: "Главная",
+            item: "https://malina-studio.online",
+          },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: "Кейсы",
+            item: "https://malina-studio.online/#cases",
+          },
+          {
+            "@type": "ListItem",
+            position: 3,
+            name: c.title,
+            item: caseUrl,
+          },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <CaseHeader />
       <main className="flex-1">
         {/* Hero / описание */}

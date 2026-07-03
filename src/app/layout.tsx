@@ -109,6 +109,72 @@ export const metadata: Metadata = {
   },
 };
 
+const SITE_URL = "https://malina-studio.online";
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Студия Малина",
+      alternateName: "Malina Studio",
+      url: SITE_URL,
+      description:
+        "Веб-студия Малина: разработка и создание веб-сайтов под ключ — корпоративные сайты с понятной админкой, лендинги и интернет-магазины. Технические задания, настройка SEO, документация и поддержка.",
+      areaServed: "RU",
+      knowsAbout: [
+        "разработка сайтов под ключ",
+        "сайты с понятной админкой",
+        "лендинги",
+        "интернет-магазины",
+        "мультиязычные сайты",
+        "технические задания на разработку",
+        "пользовательская документация",
+        "настройка SEO и веб-аналитики",
+      ],
+      makesOffer: [
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Разработка сайта или лендинга с админкой",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Технические задания на разработку сайтов и систем",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Пользовательская документация и инструкции",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "Настройка SEO, аналитики и сопровождение сайта",
+          },
+        },
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: SITE_URL,
+      name: "Студия Малина",
+      inLanguage: "ru-RU",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -120,6 +186,10 @@ export default function RootLayout({
       className={`${display.variable} ${sans.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {/* Yandex.Metrika counter */}
         <Script id="yandex-metrika" strategy="beforeInteractive">
           {`(function(m,e,t,r,i,k,a){
