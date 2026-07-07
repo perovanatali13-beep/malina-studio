@@ -301,7 +301,7 @@ function Cases() {
 
             {c.shots.length > 0 && (
               <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                {c.shots.map((shot) => (
+                {c.shots.slice(0, 3).map((shot) => (
                   <Link
                     key={shot.src}
                     href={`/cases/${c.slug}`}
