@@ -269,7 +269,7 @@ function Cases() {
       <SectionHead
         eyebrow="Кейсы"
         title="Проекты, которые работают"
-        text="Два публичных проекта, которые можно открыть и потрогать. Каждый — с собственной админкой и мультиязычностью."
+        text="Публичные проекты, которые можно открыть и потрогать: сайты с собственной админкой и мультиязычностью и лендинги с онлайн-бронированием."
       />
       <div className="mt-12 space-y-12">
         {cases.map((c) => (
@@ -299,23 +299,25 @@ function Cases() {
               </Link>
             </div>
 
-            <div className="mt-6 grid gap-4 sm:grid-cols-3">
-              {c.shots.map((shot) => (
-                <Link
-                  key={shot.src}
-                  href={`/cases/${c.slug}`}
-                  className="group block overflow-hidden rounded-2xl border border-berry-deep/10 bg-white shadow-sm transition-shadow hover:shadow-md"
-                >
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
-                  />
-                </Link>
-              ))}
-            </div>
+            {c.shots.length > 0 && (
+              <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                {c.shots.map((shot) => (
+                  <Link
+                    key={shot.src}
+                    href={`/cases/${c.slug}`}
+                    className="group block overflow-hidden rounded-2xl border border-berry-deep/10 bg-white shadow-sm transition-shadow hover:shadow-md"
+                  >
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={shot.width}
+                      height={shot.height}
+                      className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
+                    />
+                  </Link>
+                ))}
+              </div>
+            )}
           </article>
         ))}
       </div>

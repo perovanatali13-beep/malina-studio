@@ -177,47 +177,51 @@ export default async function CasePage({
         </section>
 
         {/* Скриншоты сайта */}
-        <Gallery
-          eyebrow="Как выглядит сайт"
-          title="Публичная часть"
-          shots={c.shots}
-          columns="sm:grid-cols-2 lg:grid-cols-3"
-        />
+        {c.shots.length > 0 && (
+          <Gallery
+            eyebrow="Как выглядит сайт"
+            title="Публичная часть"
+            shots={c.shots}
+            columns="sm:grid-cols-2 lg:grid-cols-3"
+          />
+        )}
 
         {/* Скриншоты админки */}
-        <section className="bg-berry-deep text-cream">
-          <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
-            <span className="text-sm font-bold uppercase tracking-[0.18em] text-berry-bright">
-              Админ-панель
-            </span>
-            <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-cream sm:text-4xl">
-              Контентом управляет заказчик
-            </h2>
-            <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cream/70">
-              Собственная панель управления: новости, страницы, справочники и
-              пользователи редактируются без разработчика.
-            </p>
-            <div className="mt-10 grid gap-6 lg:grid-cols-2">
-              {c.admin.map((shot) => (
-                <figure
-                  key={shot.src}
-                  className="overflow-hidden rounded-2xl border border-cream/10 bg-cream/5 shadow-sm"
-                >
-                  <Image
-                    src={shot.src}
-                    alt={shot.alt}
-                    width={shot.width}
-                    height={shot.height}
-                    className="h-auto w-full"
-                  />
-                  <figcaption className="px-5 py-3 text-sm text-cream/70">
-                    {shot.caption}
-                  </figcaption>
-                </figure>
-              ))}
+        {c.admin.length > 0 && (
+          <section className="bg-berry-deep text-cream">
+            <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-berry-bright">
+                Админ-панель
+              </span>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-cream sm:text-4xl">
+                Контентом управляет заказчик
+              </h2>
+              <p className="mt-4 max-w-2xl text-lg leading-relaxed text-cream/70">
+                Собственная панель управления: новости, страницы, справочники и
+                пользователи редактируются без разработчика.
+              </p>
+              <div className="mt-10 grid gap-6 lg:grid-cols-2">
+                {c.admin.map((shot) => (
+                  <figure
+                    key={shot.src}
+                    className="overflow-hidden rounded-2xl border border-cream/10 bg-cream/5 shadow-sm"
+                  >
+                    <Image
+                      src={shot.src}
+                      alt={shot.alt}
+                      width={shot.width}
+                      height={shot.height}
+                      className="h-auto w-full"
+                    />
+                    <figcaption className="px-5 py-3 text-sm text-cream/70">
+                      {shot.caption}
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
             </div>
-          </div>
-        </section>
+          </section>
+        )}
 
         {/* CTA */}
         <section className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
