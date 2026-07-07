@@ -86,7 +86,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main id="top" className="flex-1">
+      <main id="top" className="flex-1 overflow-x-hidden">
         <Hero />
         <Services />
         <How />
@@ -111,12 +111,12 @@ function Hero() {
           <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
             <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
           </span>
-          <h1 className="mt-6 font-display text-5xl font-bold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl">
+          <h1 className="mt-6 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl sm:leading-[1.05] md:text-7xl">
             Создаем <span className="text-berry">сайты</span>,
             <br />
             решаем задачи бизнеса
           </h1>
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-ink-soft">
+          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:mt-6 sm:text-lg">
             Мы создаём веб-сайты под ключ: сайты с собственной понятной
             админкой, лендинги, интернет-магазины, технические задания на
             разработку и пользовательскую документацию. Делаем продукты,
@@ -504,7 +504,7 @@ function SectionHead({
       </span>
       {title ? (
         <h2
-          className={`mt-3 font-display text-4xl font-bold leading-tight tracking-tight sm:text-5xl ${
+          className={`mt-3 font-display text-3xl font-bold leading-tight tracking-tight sm:text-5xl ${
             dark ? "text-cream" : "text-ink"
           }`}
         >

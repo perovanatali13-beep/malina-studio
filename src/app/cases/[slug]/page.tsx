@@ -106,7 +106,7 @@ export default async function CasePage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <CaseHeader />
-      <main className="flex-1">
+      <main className="flex-1 overflow-x-hidden">
         {/* Hero / описание */}
         <section className="relative overflow-hidden">
           <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-berry-bright/15 blur-3xl" />
@@ -125,10 +125,10 @@ export default async function CasePage({
                 >
                   {c.tag}
                 </span>
-                <h1 className="mt-4 font-display text-4xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
+                <h1 className="mt-4 font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-5xl">
                   {c.title}
                 </h1>
-                <p className="mt-4 max-w-2xl text-lg leading-relaxed text-ink-soft">
+                <p className="mt-4 max-w-2xl text-base leading-relaxed text-ink-soft sm:text-lg">
                   {c.subtitle}
                 </p>
 
@@ -292,13 +292,13 @@ function Gallery({
 function CaseHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-berry-deep/10 bg-cream/80 backdrop-blur-md">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
-        <Link href="/" aria-label="Студия Малина">
-          <Logo height={52} priority />
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4">
+        <Link href="/" aria-label="Студия Малина" className="shrink-0">
+          <Logo height={52} priority className="h-9 w-auto sm:h-[52px]" />
         </Link>
         <Link
           href="/#contact"
-          className="btn-leaf bg-berry px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+          className="btn-leaf shrink-0 whitespace-nowrap bg-berry px-3 py-2 text-xs font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep sm:px-5 sm:py-2.5 sm:text-sm"
         >
           Оставить заявку
         </Link>
