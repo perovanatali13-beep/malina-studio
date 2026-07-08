@@ -32,6 +32,27 @@ const services = [
   },
 ];
 
+const plans = [
+  {
+    title: "Лендинг",
+    desc: "Одностраничник с адаптивом под мобильные.",
+    price: "3 000 ₽",
+    points: ["1 страница", "Адаптив под мобильные"],
+  },
+  {
+    title: "Многостраничный",
+    desc: "Сайт до 3 страниц с админкой и базовой SEO-настройкой.",
+    price: "7 000 ₽",
+    points: ["До 3 страниц", "Админка", "SEO-база"],
+  },
+  {
+    title: "Сайт под ключ",
+    desc: "Сайт с SEO, подключенными сервисами аналитики и пользовательской документацией.",
+    price: "10 000 ₽",
+    points: ["SEO", "Аналитика", "Поддержка"],
+  },
+];
+
 const steps = [
   {
     n: "01",
@@ -93,6 +114,7 @@ export default function Home() {
         <Cases />
         <Portfolio />
         <Tech />
+        <Pricing />
         <About />
         <Contact />
       </main>
@@ -232,6 +254,53 @@ function Services() {
             </ul>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function Pricing() {
+  return (
+    <section id="pricing" className="bg-cream-deep/40">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <SectionHead
+          eyebrow="Цены"
+          title="Прозрачные цены под задачу"
+          text="Стоимость зависит от объёма и функциональности. Ниже — ориентир по основным форматам, точную оценку пришлём после разбора задачи."
+        />
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {plans.map((p) => (
+            <article
+              key={p.title}
+              className="flex flex-col rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+            >
+              <h3 className="font-display text-2xl font-semibold text-ink">
+                {p.title}
+              </h3>
+              <p className="mt-3 leading-relaxed text-ink-soft">{p.desc}</p>
+              <div className="mt-6 flex items-baseline gap-1.5">
+                <span className="text-sm text-ink-soft">от</span>
+                <span className="font-display text-4xl font-bold text-berry">
+                  {p.price}
+                </span>
+              </div>
+              <ul className="mb-8 mt-6 space-y-2.5">
+                {p.points.map((point) => (
+                  <li key={point} className="flex gap-2.5 text-ink">
+                    <span className="text-berry">✓</span>
+                    {point}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href="#contact"
+                className="btn-leaf mt-auto inline-block border border-berry px-6 py-3 text-center text-sm font-semibold text-berry transition-colors hover:bg-berry hover:text-white"
+              >
+                Обсудить проект
+              </a>
+            </article>
+          ))}
+        </div>
       </div>
     </section>
   );
