@@ -2,11 +2,11 @@ import { Logo } from "./Logo";
 
 const nav = [
   { href: "#services", label: "Услуги" },
-  { href: "#how", label: "Как работаем" },
+  { href: "#how", label: "Как работаю" },
   { href: "#cases", label: "Кейсы" },
   { href: "#tech", label: "Технологии" },
   { href: "#pricing", label: "Цены" },
-  { href: "#about", label: "О студии" },
+  { href: "#about", label: "Обо мне" },
 ];
 
 export function Header() {
