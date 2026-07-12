@@ -2,10 +2,10 @@ import { Logo } from "./Logo";
 
 const nav = [
   { href: "#services", label: "Услуги" },
-  { href: "#pricing", label: "Цены" },
   { href: "#how", label: "Как работаем" },
   { href: "#cases", label: "Кейсы" },
   { href: "#tech", label: "Технологии" },
+  { href: "#pricing", label: "Цены" },
   { href: "#about", label: "О студии" },
 ];
 
