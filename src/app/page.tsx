@@ -170,7 +170,7 @@ function Hero() {
               <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
             </span>
             <h1 className="mt-6 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl sm:leading-[1.05] md:text-7xl">
-              Создаём <span className="text-berry">сайты</span>,
+              Создаю <span className="text-berry">сайты</span>,
               <br />
               которые работают
             </h1>
@@ -540,24 +540,13 @@ function About() {
       <div className="grid items-center gap-12 lg:grid-cols-2">
         <div>
           <SectionHead eyebrow="Обо мне" />
-          <div className="mt-6 space-y-4 text-lg leading-relaxed text-ink-soft">
-            <p>
-              Я <b className="text-ink">более 15 лет</b> в IT. За это время
-              делала сайты и порталы, писала технические задания, проектировала
-              интерфейсы и переписывала документацию так, чтобы пользователи
-              находили ответы сами, а поддержка получала меньше обращений.
-            </p>
-            <p>
-              Мой принцип —{" "}
-              <b className="text-ink">превращать сложное в понятное</b>: и для
-              пользователей, которые заходят на сайт, и для команды, которая
-              будет его развивать.
-            </p>
-          </div>
-        </div>
-        <div className="rounded-3xl border border-berry-deep/10 bg-white p-8 shadow-sm">
-          <Logo height={84} className="mb-6" />
-          <div className="space-y-5">
+          <p className="mt-6 text-lg leading-relaxed text-ink-soft">
+            Я <b className="text-ink">более 15 лет</b> в IT. За это время делала
+            сайты и порталы, писала технические задания, проектировала интерфейсы
+            и переписывала документацию так, чтобы пользователи находили ответы
+            сами, а поддержка получала меньше обращений.
+          </p>
+          <div className="mt-8 space-y-5">
             {[
               [
                 "Скорость без потери качества",
@@ -581,6 +570,25 @@ function About() {
               </div>
             ))}
           </div>
+        </div>
+        <div className="rounded-3xl border border-berry-deep/10 bg-white p-8 text-center shadow-sm">
+          <Image
+            src="/founder.jpg"
+            alt="Наталья Малинина — веб-разработчик"
+            width={250}
+            height={269}
+            className="mx-auto h-28 w-28 rounded-full object-cover"
+          />
+          <div className="mt-5 font-display text-2xl font-semibold text-ink">
+            Наталья Малинина
+          </div>
+          <div className="mt-1 text-sm text-ink-soft">
+            Веб-разработчик · Основатель студии
+          </div>
+          <blockquote className="mt-6 border-l-2 border-berry pl-4 text-left text-lg italic leading-relaxed text-ink-soft">
+            «Мой принцип — превращать сложное в понятное: и для пользователей,
+            которые заходят на сайт, и для команды, которая будет его развивать.»
+          </blockquote>
         </div>
       </div>
     </section>
@@ -610,6 +618,22 @@ function Contact() {
                 </li>
               ))}
             </ul>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="https://wa.me/79159911292"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-leaf inline-flex items-center justify-center gap-2 bg-berry px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+              >
+                WhatsApp +7 915 991-12-92
+              </a>
+              <a
+                href="mailto:malina.studio26@yandex.com"
+                className="btn-leaf inline-flex items-center justify-center gap-2 border border-berry-deep/15 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
+              >
+                malina.studio26@yandex.com
+              </a>
+            </div>
           </div>
           <LeadForm />
         </div>
