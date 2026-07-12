@@ -37,7 +37,7 @@ const services = [
   {
     title: "SEO-настройка",
     desc: "Базовая SEO-оптимизация готового сайта: мета-теги, Яндекс Вебмастер, Google Search Console, аналитика.",
-    points: ["Мета-теги и Open Graph", "Яндекс Вебмастер", "Google Search Console", "Яндекс Метрика"],
+    points: ["Мета-теги", "Яндекс Вебмастер", "Google Search Console", "Яндекс Метрика"],
     price: "от 2 000 ₽",
     icon: "seo",
   },
@@ -167,7 +167,7 @@ function Hero() {
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_360px]">
           <div className="reveal">
             <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
-              <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
+              <RaspberryMark className="h-4 w-4" /> Разработка сайтов
             </span>
             <h1 className="mt-6 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl sm:leading-[1.05] md:text-7xl">
               Создаю <span className="text-berry">сайты</span>,
@@ -236,9 +236,9 @@ function FounderCard() {
         </div>
       </div>
       <p className="mt-5 leading-relaxed text-ink-soft">
-        Делаю сайты, которые клиенты умеют использовать сами. Работаю с
-        AI-инструментами — это даёт скорость без потери качества. Каждый проект
-        передаю с документацией и понятной админкой.
+        Делаю сайты, которые решают задачи бизнеса. Работаю с AI-инструментами —
+        это даёт скорость без потери качества. Каждый проект передаю с
+        документацией и понятной админкой.
       </p>
       <ul className="mt-5 flex flex-wrap gap-2">
         {["Next.js", "Vercel", "SEO", "AI-разработка", "Figma"].map((t) => (
