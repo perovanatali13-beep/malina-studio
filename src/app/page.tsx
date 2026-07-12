@@ -8,48 +8,84 @@ import { cases } from "@/data/cases";
 const services = [
   {
     title: "Сайты с админкой",
-    desc: "Разработка веб-сайтов под ключ: корпоративные сайты, многостраничники и порталы с собственной панелью управления. Контент, новости, каталоги и заявки редактируются без программиста — через понятную админку.",
-    points: ["Своя CMS под задачу", "Каталоги и справочники", "Мультиязычность", "Формы и заявки", "SEO и аналитика"],
+    desc: "Корпоративные сайты, многостраничники и порталы с собственной панелью управления. Контент редактируется без программиста — через понятную админку.",
+    points: ["Своя CMS под задачу", "Каталоги и справочники", "Мультиязычность RU/EN", "Формы и заявки", "SEO и аналитика"],
+    price: "от 7 000 ₽",
     icon: "site",
   },
   {
     title: "Лендинги",
-    desc: "Продающие одностраничники под продукт, услугу или мероприятие. Быстрая загрузка, аналитика и понятная структура, которая ведёт к заявке.",
-    points: ["Продуманная структура", "SEO и аналитика", "Адаптив под мобильные"],
+    desc: "Продающие одностраничники под продукт, услугу или мероприятие. Быстрая загрузка и структура, ведущая к заявке.",
+    points: ["Продуманная структура", "Адаптив под мобильные", "SEO и аналитика", "Форма заявки или бронирования"],
+    price: "от 3 000 ₽",
     icon: "landing",
   },
   {
     title: "Технические задания",
-    desc: "ТЗ на разработку сайтов и систем: интервью с заказчиком, сбор требований, описание архитектуры и API до старта разработки.",
+    desc: "ТЗ на разработку сайтов и систем: сбор требований, описание архитектуры и API до старта разработки.",
     points: ["Сбор требований", "Архитектура и API", "Сценарии и роли", "Критерии приёмки"],
+    price: "от 5 000 ₽",
     icon: "spec",
   },
   {
-    title: "Пользовательская документация",
-    desc: "Справки, руководства и инструкции, которые снижают нагрузку на поддержку. Превращаем сложное в понятное — для пользователей и команды.",
+    title: "Документация",
+    desc: "Справки, руководства и инструкции, снижающие нагрузку на поддержку. Превращаем сложное в понятное.",
     points: ["Структура справки", "Инструкции и гайды", "UX-тексты интерфейса", "Аналитика обращений"],
+    price: "от 3 000 ₽",
     icon: "docs",
+  },
+  {
+    title: "SEO-настройка",
+    desc: "Базовая SEO-оптимизация готового сайта: мета-теги, Яндекс Вебмастер, Google Search Console, аналитика.",
+    points: ["Мета-теги и Open Graph", "Яндекс Вебмастер", "Google Search Console", "Яндекс Метрика + GA4"],
+    price: "от 2 000 ₽",
+    icon: "seo",
   },
 ];
 
 const plans = [
   {
     title: "Лендинг",
-    desc: "Одностраничник с адаптивом под мобильные.",
-    price: "2 000 ₽",
-    points: ["1 страница", "Адаптив под мобильные"],
+    note: "Одностраничник, срок 2–3 дня",
+    price: "3 000 ₽",
+    popular: false,
+    points: [
+      "1 страница",
+      "Адаптив под мобильные",
+      "Форма заявки или кнопка в мессенджер",
+      "Базовые мета-теги",
+      "Размещение на Vercel",
+    ],
   },
   {
-    title: "Многостраничный",
-    desc: "Сайт до 3 страниц с админкой и базовой SEO-настройкой.",
+    title: "Сайт с админкой",
+    note: "До 5 страниц, срок 5–7 дней",
     price: "7 000 ₽",
-    points: ["До 3 страниц", "Админка", "SEO-база"],
+    popular: true,
+    points: [
+      "До 5 страниц",
+      "Своя CMS — редактируете сами",
+      "Адаптив под мобильные",
+      "SEO-база + Open Graph",
+      "Яндекс Метрика + Вебмастер",
+      "Передача всех доступов",
+      "Инструкция по управлению",
+    ],
   },
   {
-    title: "Сайт под ключ",
-    desc: "Сайт с SEO, подключенными сервисами аналитики и пользовательской документацией.",
-    price: "10 000 ₽",
-    points: ["SEO", "Аналитика", "Поддержка"],
+    title: "Под ключ",
+    note: "Полный цикл, срок от 2 недель",
+    price: "15 000 ₽",
+    popular: false,
+    points: [
+      "Неограниченное количество страниц",
+      "Своя CMS + мультиязычность",
+      "Полная SEO-настройка",
+      "Google Analytics + Search Console",
+      "Пользовательская документация",
+      "1 месяц поддержки включён",
+      "Обучение работе с сайтом",
+    ],
   },
 ];
 
@@ -112,7 +148,6 @@ export default function Home() {
         <Services />
         <How />
         <Cases />
-        <Portfolio />
         <Tech />
         <Pricing />
         <About />
@@ -128,55 +163,96 @@ function Hero() {
     <section className="relative overflow-hidden">
       <div className="pointer-events-none absolute -right-32 -top-24 h-96 w-96 rounded-full bg-berry-bright/15 blur-3xl" />
       <div className="pointer-events-none absolute -left-20 top-40 h-72 w-72 rounded-full bg-leaf/10 blur-3xl" />
-      <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 sm:pt-28">
-        <div className="reveal max-w-3xl">
-          <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
-            <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
-          </span>
-          <h1 className="mt-6 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl sm:leading-[1.05] md:text-7xl">
-            Создаем <span className="text-berry">сайты</span>,
-            <br />
-            решаем задачи бизнеса
-          </h1>
-          <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:mt-6 sm:text-lg">
-            Мы создаём веб-сайты под ключ: сайты с собственной понятной
-            админкой, лендинги, интернет-магазины, технические задания на
-            разработку и пользовательскую документацию. Делаем продукты,
-            которыми удобно пользоваться и легко управлять.
-          </p>
-          <div className="mt-9 flex flex-wrap items-center gap-4">
-            <a
-              href="#contact"
-              className="btn-leaf bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
-            >
-              Обсудить проект
-            </a>
-            <a
-              href="#cases"
-              className="btn-leaf border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
-            >
-              Смотреть кейсы
-            </a>
-          </div>
-        </div>
-
-        <div className="reveal mt-16 grid grid-cols-2 gap-px overflow-hidden rounded-3xl border border-berry-deep/10 bg-berry-deep/10 sm:grid-cols-4">
-          {[
-            ["Под ключ", "от ТЗ до документации"],
-            ["4", "ключевых услуги"],
-            ["Своя CMS", "под каждую задачу"],
-            ["RU / EN", "мультиязычные сайты"],
-          ].map(([big, small]) => (
-            <div key={small} className="bg-cream px-5 py-6">
-              <div className="font-display text-2xl font-bold text-berry">
-                {big}
-              </div>
-              <div className="mt-1 text-sm text-ink-soft">{small}</div>
+      <div className="mx-auto max-w-6xl px-5 pb-20 pt-20 sm:pt-24">
+        <div className="grid items-center gap-12 lg:grid-cols-[1fr_360px]">
+          <div className="reveal">
+            <span className="inline-flex items-center gap-2 rounded-full border border-berry/20 bg-white/60 px-4 py-1.5 text-sm font-medium text-berry-deep">
+              <RaspberryMark className="h-4 w-4" /> Веб-студия разработки сайтов
+            </span>
+            <h1 className="mt-6 font-display text-[2rem] font-bold leading-[1.1] tracking-tight text-ink sm:text-6xl sm:leading-[1.05] md:text-7xl">
+              Создаём <span className="text-berry">сайты</span>,
+              <br />
+              которые работают
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-ink-soft sm:mt-6 sm:text-lg">
+              Лендинги, сайты и порталы под ключ — с понятной админкой, SEO-базой
+              и документацией. Все доступы передаём вам.
+            </p>
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <a
+                href="#contact"
+                className="btn-leaf bg-berry px-7 py-3.5 text-base font-semibold text-white shadow-sm transition-colors hover:bg-berry-deep"
+              >
+                Обсудить проект
+              </a>
+              <a
+                href="#cases"
+                className="btn-leaf border border-berry-deep/15 px-7 py-3.5 text-base font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
+              >
+                Смотреть кейсы
+              </a>
             </div>
-          ))}
+            <div className="mt-12 flex flex-wrap gap-x-12 gap-y-6">
+              {[
+                ["15+", "лет в IT"],
+                ["30+", "проектов"],
+                ["3", "дня — средний срок лендинга"],
+              ].map(([big, small]) => (
+                <div key={small}>
+                  <div className="font-display text-3xl font-bold text-berry sm:text-4xl">
+                    {big}
+                  </div>
+                  <div className="mt-1 max-w-[9rem] text-sm text-ink-soft">
+                    {small}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <FounderCard />
         </div>
       </div>
     </section>
+  );
+}
+
+function FounderCard() {
+  return (
+    <div className="reveal rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm">
+      <div className="flex items-center gap-4">
+        <Image
+          src="/founder.jpg"
+          alt="Наталья Малинина — основатель студии Малина"
+          width={962}
+          height={1089}
+          className="h-20 w-20 rounded-full object-cover"
+        />
+        <div>
+          <div className="font-display text-xl font-semibold text-ink">
+            Наталья Малинина
+          </div>
+          <div className="text-sm text-ink-soft">
+            Основатель · Веб-разработчик
+          </div>
+        </div>
+      </div>
+      <p className="mt-5 leading-relaxed text-ink-soft">
+        Делаю сайты, которые клиенты умеют использовать сами. Работаю с
+        AI-инструментами — это даёт скорость без потери качества. Каждый проект
+        передаю с документацией и понятной админкой.
+      </p>
+      <ul className="mt-5 flex flex-wrap gap-2">
+        {["Next.js", "Vercel", "SEO", "AI-разработка", "Figma"].map((t) => (
+          <li
+            key={t}
+            className="rounded-full bg-cream-deep px-3 py-1 text-sm font-medium text-berry-deep"
+          >
+            {t}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
 
@@ -213,6 +289,12 @@ function ServiceIcon({ name }: { name: string }) {
         <path d="M14 3v5h5M9 12h6M9 16h4" {...common} />
       </>
     ),
+    seo: (
+      <>
+        <circle cx="11" cy="11" r="7" {...common} />
+        <path d="M21 21l-4.3-4.3M8.5 11l2 2 3.5-3.5" {...common} />
+      </>
+    ),
   };
   return (
     <svg viewBox="0 0 24 24" className="h-7 w-7" aria-hidden="true">
@@ -226,14 +308,14 @@ function Services() {
     <section id="services" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
       <SectionHead
         eyebrow="Что мы делаем"
-        title="Четыре услуги, один подход"
-        text="От идеи до готового продукта с документацией. Можем закрыть всю цепочку или подключиться на нужном этапе."
+        title="Пять услуг, один подход"
+        text="От идеи до готового продукта с документацией. Закрываем всю цепочку или подключаемся на нужном этапе."
       />
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
+      <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {services.map((s) => (
           <article
             key={s.title}
-            className="group rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+            className="group flex flex-col rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
           >
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-berry/8">
               <ServiceIcon name={s.icon} />
@@ -252,8 +334,32 @@ function Services() {
                 </li>
               ))}
             </ul>
+            <div className="mt-auto flex items-center justify-between pt-6">
+              <span className="font-semibold text-berry">{s.price}</span>
+              <a
+                href="#contact"
+                className="text-sm font-semibold text-berry transition-colors hover:text-berry-deep"
+              >
+                Обсудить →
+              </a>
+            </div>
           </article>
         ))}
+        <article className="flex flex-col justify-center rounded-3xl border border-berry/30 bg-berry/5 p-7">
+          <h3 className="font-display text-2xl font-semibold text-ink">
+            Не знаете, что нужно?
+          </h3>
+          <p className="mt-3 leading-relaxed text-ink-soft">
+            Расскажите задачу — вместе разберёмся, какой формат подойдёт.
+            Консультация бесплатно, без обязательств.
+          </p>
+          <a
+            href="#contact"
+            className="btn-leaf mt-6 inline-block bg-berry px-6 py-3 text-center text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+          >
+            Обсудить задачу
+          </a>
+        </article>
       </div>
     </section>
   );
@@ -266,24 +372,33 @@ function Pricing() {
         <SectionHead
           eyebrow="Цены"
           title="Прозрачные цены под задачу"
-          text="Стоимость зависит от объёма и функциональности. Ниже — ориентир по основным форматам, точную оценку пришлём после разбора задачи."
+          text="Точную стоимость назовём после разбора задачи. Ниже — ориентир по основным форматам."
         />
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
+        <div className="mt-12 grid items-start gap-5 md:grid-cols-3">
           {plans.map((p) => (
             <article
               key={p.title}
-              className="flex flex-col rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm transition-shadow hover:shadow-md"
+              className={`relative flex flex-col rounded-3xl bg-white p-7 shadow-sm transition-shadow hover:shadow-md ${
+                p.popular
+                  ? "border-2 border-berry shadow-md"
+                  : "border border-berry-deep/10"
+              }`}
             >
+              {p.popular && (
+                <span className="absolute -top-3 left-1/2 -translate-x-1/2 whitespace-nowrap rounded-full bg-berry px-4 py-1 text-xs font-bold text-white">
+                  ⭐ Популярный
+                </span>
+              )}
               <h3 className="font-display text-2xl font-semibold text-ink">
                 {p.title}
               </h3>
-              <p className="mt-3 leading-relaxed text-ink-soft">{p.desc}</p>
-              <div className="mt-6 flex items-baseline gap-1.5">
+              <div className="mt-4 flex items-baseline gap-1.5">
                 <span className="text-sm text-ink-soft">от</span>
                 <span className="font-display text-4xl font-bold text-berry">
                   {p.price}
                 </span>
               </div>
+              <p className="mt-2 text-sm text-ink-soft">{p.note}</p>
               <ul className="mb-8 mt-6 space-y-2.5">
                 {p.points.map((point) => (
                   <li key={point} className="flex gap-2.5 text-ink">
@@ -294,9 +409,13 @@ function Pricing() {
               </ul>
               <a
                 href="#contact"
-                className="btn-leaf mt-auto inline-block border border-berry px-6 py-3 text-center text-sm font-semibold text-berry transition-colors hover:bg-berry hover:text-white"
+                className={`btn-leaf mt-auto inline-block px-6 py-3 text-center text-sm font-semibold transition-colors ${
+                  p.popular
+                    ? "bg-berry text-white hover:bg-berry-deep"
+                    : "border border-berry text-berry hover:bg-berry hover:text-white"
+                }`}
               >
-                Обсудить проект
+                {p.popular ? "Заказать сайт" : "Обсудить проект"}
               </a>
             </article>
           ))}
@@ -338,55 +457,50 @@ function Cases() {
       <SectionHead
         eyebrow="Кейсы"
         title="Проекты, которые работают"
-        text="Публичные проекты, которые можно открыть и потрогать: сайты с собственной админкой и мультиязычностью и лендинги с онлайн-бронированием."
+        text="Живые сайты, которые можно открыть и потрогать: сайты с собственной админкой и мультиязычностью, лендинги с онлайн-бронированием и оплатой."
       />
-      <div className="mt-12 space-y-12">
+      <div className="mt-12 grid gap-6 md:grid-cols-2">
         {cases.map((c) => (
-          <article key={c.slug}>
-            <div className="flex flex-wrap items-end justify-between gap-4">
-              <div>
-                <span
-                  className={`inline-block rounded-full px-3 py-1 text-sm font-medium ${
-                    c.accent === "leaf"
-                      ? "bg-leaf/10 text-leaf"
-                      : "bg-berry/10 text-berry"
-                  }`}
-                >
-                  {c.tag}
-                </span>
-                <h3 className="mt-4 font-display text-3xl font-bold text-ink">
-                  {c.title}
-                </h3>
-                <p className="mt-2 max-w-xl text-ink-soft">{c.subtitle}</p>
-              </div>
+          <article
+            key={c.slug}
+            className="group flex flex-col overflow-hidden rounded-3xl border border-berry-deep/10 bg-white shadow-sm transition-shadow hover:shadow-md"
+          >
+            {c.shots[0] && (
               <Link
                 href={`/cases/${c.slug}`}
-                className="btn-leaf inline-flex items-center gap-2 bg-berry px-5 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
+                className="block overflow-hidden border-b border-berry-deep/10"
+              >
+                <Image
+                  src={c.shots[0].src}
+                  alt={c.shots[0].alt}
+                  width={c.shots[0].width}
+                  height={c.shots[0].height}
+                  className="aspect-[16/10] w-full object-cover object-top transition-transform duration-300 group-hover:scale-[1.02]"
+                />
+              </Link>
+            )}
+            <div className="flex flex-1 flex-col p-6">
+              <span
+                className={`inline-block w-fit rounded-full px-3 py-1 text-sm font-medium ${
+                  c.accent === "leaf"
+                    ? "bg-leaf/10 text-leaf"
+                    : "bg-berry/10 text-berry"
+                }`}
+              >
+                {c.tag}
+              </span>
+              <h3 className="mt-4 font-display text-2xl font-bold text-ink">
+                {c.title}
+              </h3>
+              <p className="mt-2 leading-relaxed text-ink-soft">{c.subtitle}</p>
+              <Link
+                href={`/cases/${c.slug}`}
+                className="mt-auto inline-flex items-center gap-2 pt-5 text-sm font-semibold text-berry transition-colors hover:text-berry-deep"
               >
                 Подробнее о проекте
                 <span aria-hidden>→</span>
               </Link>
             </div>
-
-            {c.shots.length > 0 && (
-              <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                {c.shots.slice(0, 3).map((shot) => (
-                  <Link
-                    key={shot.src}
-                    href={`/cases/${c.slug}`}
-                    className="group block overflow-hidden rounded-2xl border border-berry-deep/10 bg-white shadow-sm transition-shadow hover:shadow-md"
-                  >
-                    <Image
-                      src={shot.src}
-                      alt={shot.alt}
-                      width={shot.width}
-                      height={shot.height}
-                      className="h-auto w-full transition-transform duration-300 group-hover:scale-[1.02]"
-                    />
-                  </Link>
-                ))}
-              </div>
-            )}
           </article>
         ))}
       </div>
@@ -420,29 +534,6 @@ function Tech() {
   );
 }
 
-function Portfolio() {
-  return (
-    <section className="mx-auto max-w-6xl px-5 pb-4">
-      <div className="rounded-3xl border border-dashed border-berry/30 bg-white/60 p-8 text-center sm:p-10">
-        <h3 className="font-display text-2xl font-semibold text-ink">
-          Портфолио по запросу
-        </h3>
-        <p className="mx-auto mt-3 max-w-2xl text-ink-soft">
-          Технические задания на разработку сайтов и систем, примеры лендингов и
-          пользовательской документации показываем индивидуально — пришлём
-          релевантные вашему проекту примеры по запросу.
-        </p>
-        <a
-          href="#contact"
-          className="btn-leaf mt-6 inline-block border border-berry px-6 py-3 text-sm font-semibold text-berry transition-colors hover:bg-berry hover:text-white"
-        >
-          Запросить примеры
-        </a>
-      </div>
-    </section>
-  );
-}
-
 function About() {
   return (
     <section id="about" className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
@@ -460,20 +551,39 @@ function About() {
               Наш принцип —{" "}
               <b className="text-ink">превращать сложное в понятное</b>: и для
               пользователей, которые заходят на сайт, и для команды, которая
-              будет его развивать. Поэтому к каждому проекту прилагаются понятная
-              админка и документация.
+              будет его развивать.
             </p>
-            <p>
-              Работаем на современном стеке, используем AI-инструменты для
-              скорости, настраиваем SEO и аналитику, чтобы решения приносили
-              измеримый результат.
-            </p>
-            <p>
-              Наша веб-студия закрывает весь цикл — создание и разработка
-              веб-сайтов под ключ, от лендинга до корпоративного сайта и
-              интернет-магазина, настройка SEO для продвижения в поисковых
-              системах, а затем поддержка и развитие сайта.
-            </p>
+          </div>
+          <div className="mt-8 space-y-5">
+            {[
+              [
+                "⚡",
+                "Скорость без потери качества",
+                "Лендинг — 2–3 дня, многостраничник — неделя. AI-инструменты ускоряют работу, структуру и контент всегда проверяю вручную.",
+              ],
+              [
+                "🔑",
+                "Все доступы — ваши",
+                "Передаю код на GitHub, хостинг на Vercel, домен. Сайт полностью ваш, без привязки ко мне.",
+              ],
+              [
+                "📖",
+                "Документация к каждому проекту",
+                "К сайту прилагается инструкция — как редактировать контент, добавлять страницы, что делать если что-то пошло не так.",
+              ],
+            ].map(([icon, title, desc]) => (
+              <div key={title} className="flex gap-4">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-berry/8 text-xl">
+                  {icon}
+                </div>
+                <div>
+                  <div className="font-semibold text-ink">{title}</div>
+                  <div className="mt-1 text-base leading-relaxed text-ink-soft">
+                    {desc}
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         <div className="rounded-3xl border border-berry-deep/10 bg-white p-8 shadow-sm">
