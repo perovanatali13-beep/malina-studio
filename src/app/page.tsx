@@ -66,7 +66,7 @@ const plans = [
       "До 3 страниц",
       "Своя CMS — редактируете сами",
       "Адаптив под мобильные",
-      "SEO-база + Open Graph",
+      "SEO-база",
       "Яндекс Метрика + Вебмастер",
       "Передача всех доступов",
       "Инструкция по управлению",
@@ -80,7 +80,7 @@ const plans = [
     points: [
       "Неограниченное количество страниц",
       "Своя CMS + мультиязычность",
-      "Полная SEO-настройка",
+      "SEO-настройка",
       "Google Analytics + Search Console",
       "Пользовательская документация",
       "1 месяц поддержки включён",
@@ -220,21 +220,19 @@ function Hero() {
 function FounderCard() {
   return (
     <div className="reveal rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm">
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-5">
         <Image
           src="/founder.jpg"
-          alt="Наталья Малинина — основатель студии Малина"
+          alt="Наталья Малинина — веб-разработчик"
           width={250}
           height={269}
-          className="h-20 w-20 rounded-full object-cover"
+          className="h-28 w-28 rounded-full object-cover"
         />
         <div>
-          <div className="font-display text-xl font-semibold text-ink">
+          <div className="font-display text-2xl font-semibold text-ink">
             Наталья Малинина
           </div>
-          <div className="text-sm text-ink-soft">
-            Основатель · Веб-разработчик
-          </div>
+          <div className="mt-1 text-sm text-ink-soft">Веб-разработчик</div>
         </div>
       </div>
       <p className="mt-5 leading-relaxed text-ink-soft">
@@ -582,9 +580,7 @@ function About() {
           <div className="mt-5 font-display text-2xl font-semibold text-ink">
             Наталья Малинина
           </div>
-          <div className="mt-1 text-sm text-ink-soft">
-            Веб-разработчик · Основатель студии
-          </div>
+          <div className="mt-1 text-sm text-ink-soft">Веб-разработчик</div>
           <blockquote className="mt-6 border-l-2 border-berry pl-4 text-left text-lg italic leading-relaxed text-ink-soft">
             «Мой принцип — превращать сложное в понятное: и для пользователей,
             которые заходят на сайт, и для команды, которая будет его развивать.»
@@ -625,13 +621,13 @@ function Contact() {
                 rel="noopener noreferrer"
                 className="btn-leaf inline-flex items-center justify-center gap-2 bg-berry px-5 py-3 text-sm font-semibold text-white transition-colors hover:bg-berry-deep"
               >
-                WhatsApp +7 915 991-12-92
+                Написать в WhatsApp
               </a>
               <a
                 href="mailto:malina.studio26@yandex.com"
                 className="btn-leaf inline-flex items-center justify-center gap-2 border border-berry-deep/15 px-5 py-3 text-sm font-semibold text-ink transition-colors hover:border-berry hover:text-berry"
               >
-                malina.studio26@yandex.com
+                Написать на почту
               </a>
             </div>
           </div>
