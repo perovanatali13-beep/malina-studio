@@ -1,4 +1,4 @@
-import { Logo } from "./Logo";
+import { RaspberryMark } from "./Logo";
 
 const nav = [
   { href: "#services", label: "Услуги" },
@@ -13,8 +13,15 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-berry-deep/10 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4">
-        <a href="#top" aria-label="Студия Малина" className="shrink-0">
-          <Logo height={52} priority className="h-9 w-auto sm:h-[52px]" />
+        <a
+          href="#top"
+          aria-label="Наталья Малинина"
+          className="flex shrink-0 items-center gap-2"
+        >
+          <RaspberryMark className="h-7 w-7 sm:h-8 sm:w-8" />
+          <span className="font-display text-lg font-semibold text-ink sm:text-xl">
+            Наталья Малинина
+          </span>
         </a>
         <nav className="hidden items-center gap-8 md:flex">
           {nav.map((item) => (

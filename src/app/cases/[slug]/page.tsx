@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { Logo, RaspberryMark } from "@/components/Logo";
+import { RaspberryMark } from "@/components/Logo";
 import { cases, getCase, type Shot } from "@/data/cases";
 
 export function generateStaticParams() {
@@ -293,8 +293,15 @@ function CaseHeader() {
   return (
     <header className="sticky top-0 z-50 border-b border-berry-deep/10 bg-cream/80 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-5 sm:py-4">
-        <Link href="/" aria-label="Студия Малина" className="shrink-0">
-          <Logo height={52} priority className="h-9 w-auto sm:h-[52px]" />
+        <Link
+          href="/"
+          aria-label="Наталья Малинина"
+          className="flex shrink-0 items-center gap-2"
+        >
+          <RaspberryMark className="h-7 w-7 sm:h-8 sm:w-8" />
+          <span className="font-display text-lg font-semibold text-ink sm:text-xl">
+            Наталья Малинина
+          </span>
         </Link>
         <Link
           href="/#contact"
@@ -311,12 +318,19 @@ function CaseFooter() {
   return (
     <footer className="border-t border-berry-deep/10 bg-cream">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
-        <Link href="/" aria-label="Студия Малина">
-          <Logo />
+        <Link
+          href="/"
+          aria-label="Наталья Малинина"
+          className="flex items-center gap-2"
+        >
+          <RaspberryMark className="h-6 w-6" />
+          <span className="font-display text-lg font-semibold text-ink">
+            Наталья Малинина
+          </span>
         </Link>
         <p className="flex items-center gap-2 text-sm text-ink-soft">
           <RaspberryMark className="h-4 w-4" />© {new Date().getFullYear()}{" "}
-          Студия Малина
+          Наталья Малинина
         </p>
         <Link
           href="/#contact"
