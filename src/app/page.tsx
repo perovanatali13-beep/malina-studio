@@ -642,9 +642,14 @@ function Footer() {
   return (
     <footer className="border-t border-berry-deep/10 bg-cream">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-5 py-8 sm:flex-row">
-        <Logo />
+        <div className="flex items-center gap-2">
+          <RaspberryMark className="h-6 w-6" />
+          <span className="font-display text-lg font-semibold text-ink">
+            Наталья Малинина
+          </span>
+        </div>
         <p className="text-sm text-ink-soft">
-          © {new Date().getFullYear()} Студия Малина — разработка и создание
+          © {new Date().getFullYear()} Наталья Малинина — разработка и создание
           сайтов под ключ.
         </p>
         <a
