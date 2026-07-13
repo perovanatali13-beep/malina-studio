@@ -224,8 +224,8 @@ function FounderCard() {
         <Image
           src="/founder.jpg"
           alt="Наталья Малинина — веб-разработчик"
-          width={962}
-          height={1089}
+          width={1024}
+          height={1024}
           className="h-28 w-28 rounded-full object-cover"
         />
         <div>
@@ -573,8 +573,8 @@ function About() {
           <Image
             src="/founder.jpg"
             alt="Наталья Малинина — веб-разработчик"
-            width={962}
-            height={1089}
+            width={1024}
+            height={1024}
             className="mx-auto h-28 w-28 rounded-full object-cover"
           />
           <div className="mt-5 font-display text-2xl font-semibold text-ink">
