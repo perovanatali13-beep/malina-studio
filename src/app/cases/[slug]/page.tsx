@@ -176,6 +176,33 @@ export default async function CasePage({
           </div>
         </section>
 
+        {/* Результаты */}
+        {c.results && c.results.length > 0 && (
+          <section className="border-y border-berry-deep/10 bg-cream-deep/40">
+            <div className="mx-auto max-w-6xl px-5 py-16 sm:py-20">
+              <span className="text-sm font-bold uppercase tracking-[0.18em] text-leaf">
+                Результаты
+              </span>
+              <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-ink sm:text-4xl">
+                Что даёт сайт
+              </h2>
+              <ul className="mt-8 grid gap-4 sm:grid-cols-2">
+                {c.results.map((r) => (
+                  <li
+                    key={r}
+                    className="flex gap-3 rounded-2xl border border-berry-deep/10 bg-white p-5 shadow-sm"
+                  >
+                    <span className="mt-0.5 text-leaf" aria-hidden>
+                      ✓
+                    </span>
+                    <span className="leading-relaxed text-ink">{r}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
+
         {/* Скриншоты сайта */}
         {c.shots.length > 0 && (
           <Gallery
