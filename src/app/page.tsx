@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { LeadForm } from "@/components/LeadForm";
 import { Logo, RaspberryMark } from "@/components/Logo";
 import { cases } from "@/data/cases";
+import { reviews } from "@/data/reviews";
 
 const services = [
   {
@@ -148,6 +149,7 @@ export default function Home() {
         <Services />
         <How />
         <Cases />
+        <Reviews />
         <Tech />
         <Pricing />
         <About />
@@ -501,6 +503,49 @@ function Cases() {
             </div>
           </article>
         ))}
+      </div>
+    </section>
+  );
+}
+
+function Reviews() {
+  return (
+    <section id="reviews" className="bg-cream-deep/40">
+      <div className="mx-auto max-w-6xl px-5 py-20 sm:py-24">
+        <SectionHead
+          eyebrow="Отзывы"
+          title="Что говорят клиенты"
+          text="Слова заказчиков, с которыми мы вместе запускали проекты."
+        />
+        <div className="mt-12 grid items-start gap-6 lg:grid-cols-2">
+          {reviews.map((r) => (
+            <figure
+              key={r.author}
+              className="flex flex-col rounded-3xl border border-berry-deep/10 bg-white p-7 shadow-sm sm:p-8"
+            >
+              <span
+                aria-hidden
+                className="font-display text-6xl leading-none text-berry/30"
+              >
+                “
+              </span>
+              <blockquote className="mt-2 space-y-4 leading-relaxed text-ink-soft">
+                {r.paragraphs.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
+              </blockquote>
+              <figcaption className="mt-6 border-t border-berry-deep/10 pt-5">
+                <div className="font-semibold text-ink">{r.author}</div>
+                <Link
+                  href={`/cases/${r.caseSlug}`}
+                  className="text-sm font-medium text-berry transition-colors hover:text-berry-deep"
+                >
+                  {r.project}
+                </Link>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
       </div>
     </section>
   );
