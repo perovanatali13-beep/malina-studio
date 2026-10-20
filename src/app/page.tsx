@@ -5,6 +5,7 @@ import { LeadForm } from "@/components/LeadForm";
 import { Logo, RaspberryMark } from "@/components/Logo";
 import { cases } from "@/data/cases";
 import { reviews } from "@/data/reviews";
+import { SHOW_PRICES } from "@/data/site";
 
 const services = [
   {
@@ -151,7 +152,7 @@ export default function Home() {
         <Cases />
         <Reviews />
         <Tech />
-        <Pricing />
+        {SHOW_PRICES && <Pricing />}
         <About />
         <Contact />
       </main>
@@ -335,7 +336,9 @@ function Services() {
               ))}
             </ul>
             <div className="mt-auto flex items-center justify-between pt-6">
-              <span className="font-semibold text-berry">{s.price}</span>
+              <span className="font-semibold text-berry">
+                {SHOW_PRICES && s.price}
+              </span>
               <a
                 href="#contact"
                 className="text-sm font-semibold text-berry transition-colors hover:text-berry-deep"

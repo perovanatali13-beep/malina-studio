@@ -1,3 +1,4 @@
+import { SHOW_PRICES } from "@/data/site";
 import { RaspberryMark } from "./Logo";
 
 const nav = [
@@ -6,7 +7,7 @@ const nav = [
   { href: "#cases", label: "Кейсы" },
   { href: "#reviews", label: "Отзывы" },
   { href: "#tech", label: "Технологии" },
-  { href: "#pricing", label: "Цены" },
+  ...(SHOW_PRICES ? [{ href: "#pricing", label: "Цены" }] : []),
   { href: "#about", label: "Обо мне" },
 ];
 

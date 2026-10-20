@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant, Jost } from "next/font/google";
 import Script from "next/script";
+import { SHOW_PRICES } from "@/data/site";
 import "./globals.css";
 
 const display = Cormorant({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://malina-studio.online"),
   title: "Студия Малина — разработка и создание сайтов под ключ",
   description:
-    "Веб-студия Малина: разработка и создание веб-сайтов под ключ — корпоративные сайты с понятной админкой, лендинги и интернет-магазины. Лендинг от 4 000 ₽, сайт с админкой от 10 000 ₽, сайт под ключ с SEO от 35 000 ₽. Технические задания на разработку, настройка SEO для продвижения в поисковых системах, документация и поддержка сайта.",
+    `Веб-студия Малина: разработка и создание веб-сайтов под ключ — корпоративные сайты с понятной админкой, лендинги и интернет-магазины.${SHOW_PRICES ? " Лендинг от 4 000 ₽, сайт с админкой от 10 000 ₽, сайт под ключ с SEO от 35 000 ₽." : ""} Технические задания на разработку, настройка SEO для продвижения в поисковых системах, документация и поддержка сайта.`,
   keywords: [
     // Основные коммерческие запросы
     "разработка сайтов",
@@ -161,13 +162,15 @@ const jsonLd = {
             "@type": "Service",
             name: "Лендинг — одностраничный сайт с адаптивом под мобильные",
           },
-          priceSpecification: {
-            "@type": "PriceSpecification",
-            price: "9000",
-            minPrice: "9000",
-            priceCurrency: "RUB",
-            valueAddedTaxIncluded: false,
-          },
+          ...(SHOW_PRICES && {
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "9000",
+              minPrice: "9000",
+              priceCurrency: "RUB",
+              valueAddedTaxIncluded: false,
+            },
+          }),
         },
         {
           "@type": "Offer",
@@ -175,13 +178,15 @@ const jsonLd = {
             "@type": "Service",
             name: "Сайт с админкой до 3 страниц и SEO-базой",
           },
-          priceSpecification: {
-            "@type": "PriceSpecification",
-            price: "19000",
-            minPrice: "19000",
-            priceCurrency: "RUB",
-            valueAddedTaxIncluded: false,
-          },
+          ...(SHOW_PRICES && {
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "19000",
+              minPrice: "19000",
+              priceCurrency: "RUB",
+              valueAddedTaxIncluded: false,
+            },
+          }),
         },
         {
           "@type": "Offer",
@@ -189,13 +194,15 @@ const jsonLd = {
             "@type": "Service",
             name: "Сайт под ключ с SEO, аналитикой и пользовательской документацией",
           },
-          priceSpecification: {
-            "@type": "PriceSpecification",
-            price: "35000",
-            minPrice: "35000",
-            priceCurrency: "RUB",
-            valueAddedTaxIncluded: false,
-          },
+          ...(SHOW_PRICES && {
+            priceSpecification: {
+              "@type": "PriceSpecification",
+              price: "35000",
+              minPrice: "35000",
+              priceCurrency: "RUB",
+              valueAddedTaxIncluded: false,
+            },
+          }),
         },
         {
           "@type": "Offer",
